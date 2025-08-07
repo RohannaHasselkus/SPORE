@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPORE | Network Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+  <script defer src="assets/network.js"></script>
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" class="logo-title" >SPORE</a></h1>
+    <p class="tagline">Explore Gene Regulatory Networks</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="organisms.html">Organisms</a></li>
+        <li><a href="network.html" class="active">Networks</a></li>
+        <li><a href="gene.html">Genes</a></li>
+        <li><a href="download.html">Downloads</a></li>
+        <li><a href="methods.html">Methods</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="api.html">API</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section>
+      <h2>Network Viewer</h2>
+      <label for="speciesSelect">Select Organism:</label>
+      <select id="speciesSelect" onchange="loadNetwork()">
+        <option value="a_nidulans">Aspergillus nidulans</option>
+        <option value="n_crassa">Neurospora crassa</option>
+      </select>
+      <div id="cy" style="height: 600px; margin-top: 2rem;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SPORE. All rights reserved.</p>
+  </footer>
+</body>
+</html>

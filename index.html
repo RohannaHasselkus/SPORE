@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPORE | Fungal Regulatory Networks</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="assets/script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
+  
+</head>
+
+<body>
+  <header>
+    <h1><a href="index.html" class="logo-title">SPORE</a></h1>
+    <p class="tagline">A Database of Fungal Gene Regulatory Networks</p>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="organisms.html">Organisms</a></li>
+        <li><a href="network.html">Networks</a></li>
+        <li><a href="gene.html">Genes</a></li>
+        <li><a href="download.html">Downloads</a></li>
+        <li><a href="methods.html">Methods</a></li>
+        <li><a href="ref.html">References</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="api.html">API</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section id="about">
+      <h2>About SPORE</h2>
+      <p>SPORE (Systematic Platform for Organismal Regulatory Exploration) is a curated and computationally inferred database of fungal gene regulatory networks. Built for researchers, by researchers.</p>
+    </section>
+
+    <section id="explore">
+      <h2>Explore the Database</h2>
+      <div class="search">
+        <input type="text" id="searchBox" placeholder="Search genes, TFs, or pathways..." />
+        <button onclick="searchDatabase()">Search</button>
+      </div>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="contact-form" action="YOUR_BACKEND_ENDPOINT" method="POST">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+      <p>Questions or feedback? Reach out via <a href="mailto:spore@bioinformatics.org">spore@bioinformatics.org</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SPORE. All rights reserved.</p>
+  </footer>
+</body>
+</html>

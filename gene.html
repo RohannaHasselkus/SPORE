@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPORE | Gene Info</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="gene.js"></script>
+</head>
+<body>
+  <header>
+     <h1><a href="index.html" class="logo-title" >SPORE</a></h1>
+    <p class="tagline">Gene Information</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="organisms.html">Organisms</a></li>
+        <li><a href="network.html">Networks</a></li>
+        <li><a href="gene.html" class="active">Genes</a></li>
+        <li><a href="download.html">Downloads</a></li>
+        <li><a href="methods.html">Methods</a></li>
+        <li><a href="ref.html"> References </a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="api.html">API</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section>
+      <h2 id="geneName">Gene: </h2>
+      <p id="geneDetails">Loading gene details...</p>
+      <h3>Regulators</h3>
+      <ul id="regulatorsList"></ul>
+      <h3>Targets</h3>
+      <ul id="targetsList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SPORE. All rights reserved.</p>
+  </footer>
+</body>
+</html>

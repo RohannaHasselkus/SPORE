@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPORE | API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+   <h1><a href="index.html" class="logo-title" >SPORE</a></h1>
+    <p class="tagline">API Documentation</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="organisms.html">Organisms</a></li>
+        <li><a href="network.html">Networks</a></li>
+        <li><a href="gene.html">Genes</a></li>
+        <li><a href="download.html">Downloads</a></li>
+        <li><a href="methods.html">Methods</a></li>
+        <li><a href="ref.html"> References </a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="api.html" class="active">API</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section>
+      <h2>REST API</h2>
+      *Need to implement API*
+      <p>Use our RESTful API to query gene and network data.</p>
+
+      <h3>GET /api/gene/:id</h3>
+      <pre><code>curl https://spore-db.org/api/gene/creA</code></pre>
+
+      <h3>GET /api/network/:species</h3>
+      <pre><code>curl https://spore-db.org/api/network/a_nidulans</code></pre>
+
+      <h3>GET /api/search?q=term</h3>
+      <pre><code>curl https://spore-db.org/api/search?q=carbon</code></pre>
+    </section>
+
+    <section>
+      <h2>Authentication</h2>
+      <p>No authentication is currently required. Rate limiting applies.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SPORE. All rights reserved.</p>
+  </footer>
+</body>
+</html>

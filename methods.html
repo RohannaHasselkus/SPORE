@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPORE | Methods</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html" class="logo-title" >SPORE</a></h1>
+    <p class="tagline">How We Build the Networks</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="organisms.html">Organisms</a></li>
+        <li><a href="network.html">Networks</a></li>
+        <li><a href="gene.html">Genes</a></li>
+        <li><a href="download.html">Downloads</a></li>
+        <li><a href="methods.html" class="active">Methods</a></li>
+        <li><a href="ref.html"> References </a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="api.html">API</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section>
+      <h2>Pipeline Overview</h2>
+      <p>We integrate TF annotations, promoter sequences, and motif scanning to construct gene regulatory networks. The core inference methods include:</p>
+      <ul>
+        <li><strong>PANDA</strong> for global network inference</li>
+        <li><strong>LIONESS</strong> for sample-specific networks</li>
+        <li><strong>Motif Scanning</strong> using FIMO on 1kb upstream promoter regions</li>
+      </ul>
+      <p>Genomic data is primarily sourced from <a href="https://fungi.ensembl.org">Ensembl Fungi</a>. We preprocess sequences, annotate TFs, and score motif-target associations.</p>
+    </section>
+
+    <section>
+      <h2>Reproducibility</h2>
+      <p>All scripts and workflows are available on our <a href="https://github.com/spore-db">GitHub repository</a>. Full versioning and parameter documentation ensures transparency.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SPORE. All rights reserved.</p>
+  </footer>
+</body>
+</html>

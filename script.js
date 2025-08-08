@@ -29,3 +29,17 @@ function searchDatabase() {
     .map(item => `<div><strong>${item.name}</strong> (${item.type}) - <em>${item.species}</em></div>`)
     .join("");
 }
+<script>
+  const toggle = document.getElementById("dark-mode-toggle");
+
+  // Load preference from localStorage
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener("change", function () {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+  });
+</script>

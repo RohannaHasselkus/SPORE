@@ -1,16 +1,84 @@
 :root {
-  --primary-bg: #1e1e2f;
-  --accent-color: #5dbf86;
-  --mushroom-light: #f5f5f4;
-  --mushroom-dark: #3e3b36;
-  --moss-green: #5dbf86;
-  --spore-beige: #f0f0ee;
-  --text-light: #f4f4f7;
-  --text-dark: #2e2e3a;
-  --card-bg: #ffffff;
-  --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --primary-bg: #3b372f;          /* Deep mushroom brown-gray, rich and warm */
+  --accent-color: #b19c83;        /* Warm beige-tan accent, like mushroom caps */
+  --mushroom-light: #e8e5df;      /* Soft creamy off-white, gentle highlight */
+  --mushroom-dark: #5c5447;       /* Dark earthy gray-brown for text */
+  --moss-green: #8a7f6e;          /* Muted mossy taupe for subtle green hints */
+  --spore-beige: #f5f2eb;         /* Very light beige, soft and natural */
+  --text-light: #f0eee9;          /* Light warm gray for text on dark bg */
+  --text-dark: #3c372f;           /* Dark brown-gray for text on light bg */
+  --card-bg: #fbfaf7;             /* Almost white with warm mushroom tint */
+  --shadow: 0 4px 20px rgba(56, 51, 43, 0.15); /* Soft warm shadow */
   --radius: 12px;
 }
+
+/* Dark mode overrides — minimal changes, same vibe */
+body.dark-mode {
+  background: #1e1e20;           /* Dark charcoal instead of spore beige */
+  color: #dcd9d0;                /* Light mushroomy cream for text */
+}
+
+body.dark-mode header {
+  background-color: #2f2c26;     /* Dark mushroomy brown instead of primary-bg */
+  color: #f5f2eb;                /* Light warm text */
+}
+
+body.dark-mode nav a {
+  color: #dcd9d0;
+}
+
+body.dark-mode nav a:hover,
+body.dark-mode nav a.active {
+  background-color: #739d68;     /* mossy green accent */
+  color: #f5f2eb;
+}
+
+body.dark-mode section {
+  background: #38372f;           /* Dark mushroomy card background */
+  color: #dcd9d0;
+  box-shadow: 0 4px 20px rgba(20, 20, 15, 0.6);
+}
+
+body.dark-mode .results {
+  background: #464537;           /* Slightly lighter dark bg */
+  border-left-color: #739d68;
+  color: #dcd9d0;
+}
+
+body.dark-mode footer {
+  background-color: #2f2c26;
+  color: #f5f2eb;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Scrollbar in dark mode */
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #2f2c26;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #739d68;
+  border: 3px solid #2f2c26;
+}
+
+/* Text inputs and buttons */
+body.dark-mode #contact-form input,
+body.dark-mode #contact-form textarea {
+  background-color: #464537;
+  color: #dcd9d0;
+  border: 1px solid #739d68;
+}
+
+body.dark-mode #contact-form button {
+  background-color: #739d68;
+  color: #f5f2eb;
+}
+
+body.dark-mode #contact-form button:hover {
+  background-color: #5e7a4d;
+}
+
+
 
 body {
   margin: 0;
@@ -54,22 +122,39 @@ header h1 {
   letter-spacing: -1px;
 }
 
-.logo-title {
+header h1, .logo-title {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 900;
   letter-spacing: 0.05em;
-  background: linear-gradient(120deg, #5dbf86, #89e0b0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 1px 1px 2px rgba(30, 30, 47, 0.08);
+  color: #f5f2eb; /* warm off-white */
+  text-shadow: 0 2px 6px rgba(59, 55, 47, 0.8);
   margin: 0;
+  text-decoration: none; /* ensures no underline */
 }
+
+header h1, .logo-title .dark-mode {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  color: #f5f2eb; /* warm off-white */
+  text-shadow: 0 2px 6px rgba(59, 55, 47, 0.8);
+  margin: 0;
+  text-decoration: none; /* ensures no underline */
+}
+
 
 .tagline {
   font-weight: 300;
   font-size: 1.4rem;
   margin-top: 0.5rem;
   color: var(--moss-green);
+}
+
+.tagline .dark-mode {
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  color: #f5f2eb;
 }
 
 nav ul {
@@ -123,6 +208,10 @@ h2::after {
   background: var(--moss-green);
   bottom: -10px;
   left: 0;
+}
+
+body.dark-mode h2 {
+  color: #f5f2eb;
 }
 
 .search {
@@ -259,3 +348,86 @@ footer {
 #contact-form button:hover {
   background-color: #4a8a5a;
 }
+
+body.dark-mode h2 {
+  color: #f5f2eb;
+}
+
+body.dark-mode .tagline {
+  color: #f5f2eb;
+}
+
+body, section, header, footer, h1, h2, p, nav a, .tagline {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.theme-toggle input {
+  display: none; /* hide the checkbox */
+}
+
+.slider {
+  width: 50px;
+  height: 28px;
+  background-color: #ccc;
+  border-radius: 34px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* When checked, move the knob */
+input:checked + .slider {
+  background-color: var(--moss-green);
+}
+
+input:checked + .slider::before {
+  transform: translateX(22px);
+}
+
+img.logo-image{
+  max-width: 60%;
+  margin:0px;
+ float: center;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center the image horizontally */
+  text-align: left;     /* text stays left-aligned */
+}
+
+.logo-image {
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.about-text {
+  max-width: 700px;
+  width: 100%;
+}
+
+

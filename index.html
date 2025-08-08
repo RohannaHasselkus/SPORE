@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SPORE | Fungal Regulatory Networks</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="assets/script.js"></script>
+  <script defer src="script.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="/spore_favicon.ico">
   
 </head>
 
@@ -31,11 +32,26 @@
     </nav>
   </header>
 
+<label class="theme-toggle">
+  <input type="checkbox" id="dark-mode-toggle" />
+  <span class="slider"></span>
+</label>
+
+
   <main class="content">
-    <section id="about">
+<section id="about">
+  <div class="about-container">
+    <img class="logo-image" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeIW5LSh7zQTDBPZk9u-xZsIOKB1a7eMpSm-SeF9F2sr_wCXYHnUfPte8AvfFagiVS22Qmz-nKjNf_ZmLqtqWbYhFFtrI1sc-8e-flaqrQZzWLwIkbBlJX2Lwz9tk8FpNmT63miRA?key=2F8dTeX23fJpiGO_g-2ohg" alt="SPORE Logo" />
+    <div class="about-text">
       <h2>About SPORE</h2>
-      <p>SPORE (Systematic Platform for Organismal Regulatory Exploration) is a curated and computationally inferred database of fungal gene regulatory networks. Built for researchers, by researchers.</p>
-    </section>
+      <p>
+        SPORE (Systems-level Platform for Organizing Regulatory Elements) is a curated and computationally inferred
+        database of fungal gene regulatory networks. 
+      </p>
+    </div>
+  </div>
+</section>
+
 
     <section id="explore">
       <h2>Explore the Database</h2>
@@ -67,5 +83,42 @@
   <footer>
     <p>&copy; 2025 SPORE. All rights reserved.</p>
   </footer>
+
+  <script>
+    // script.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("dark-mode-toggle");
+
+  // Load preference
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    toggle.checked = true;
+  }
+
+  toggle.addEventListener("change", function () {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+  });
+});
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("dark-mode-toggle");
+    const body = document.body;
+
+    // Apply saved theme
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-mode");
+      toggle.checked = true;
+    }
+
+    // Toggle event
+    toggle.addEventListener("change", () => {
+      const isDark = toggle.checked;
+      body.classList.toggle("dark-mode", isDark);
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+  });
+
+  </script>
 </body>
 </html>
